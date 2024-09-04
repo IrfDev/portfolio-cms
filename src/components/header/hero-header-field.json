@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_header_hero_header_fields",
+  "info": {
+    "displayName": "Hero Header field"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Cta_Button": {
+      "type": "string"
+    },
+    "main_image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "secondary_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
