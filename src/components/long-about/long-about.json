@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_long-about",
+  "info": {
+    "displayName": "Long About"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+
+    "content": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

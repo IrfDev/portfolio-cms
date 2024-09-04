@@ -788,6 +788,185 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiCompanyCompany extends Schema.CollectionType {
+  collectionName: 'company';
+  info: {
+    singularName: 'company';
+    pluralName: 'companies';
+    displayName: 'company';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    brow: Attribute.Text;
+    slug: Attribute.UID<'api::company.company', 'title'>;
+    description: Attribute.RichText;
+    Logo: Attribute.Media<'images'> & Attribute.Required;
+    background_image: Attribute.Media<'images'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::company.company',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::company.company',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiIndexIndex extends Schema.SingleType {
+  collectionName: 'indices';
+  info: {
+    singularName: 'index';
+    pluralName: 'indices';
+    displayName: 'Index';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Header: Attribute.DynamicZone<['header.hero-header-field']>;
+    About: Attribute.DynamicZone<
+      ['about.porgramming-languages', 'about.contact-me', 'about.about']
+    > &
+      Attribute.Required;
+    long_about: Attribute.DynamicZone<['long-about.long-about']> &
+      Attribute.Required;
+    projects_section: Attribute.DynamicZone<['projects.projects']> &
+      Attribute.Required;
+    Companies: Attribute.DynamicZone<['companies.companies']> &
+      Attribute.Required;
+    get_in_touch: Attribute.DynamicZone<['contact.contact-me']> &
+      Attribute.Required;
+    SEO: Attribute.DynamicZone<['shared.seo', 'shared.meta-social']>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::index.index',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::index.index',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProgrammingLanguageProgrammingLanguage
+  extends Schema.CollectionType {
+  collectionName: 'programming_languages';
+  info: {
+    singularName: 'programming-language';
+    pluralName: 'programming-languages';
+    displayName: 'Programming language';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    Icon: Attribute.Media<'images'> & Attribute.Required;
+    Experience: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::programming-language.programming-language',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::programming-language.programming-language',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProjectProject extends Schema.CollectionType {
+  collectionName: 'project';
+  info: {
+    singularName: 'project';
+    pluralName: 'projects';
+    displayName: 'Projects';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    About: Attribute.Text;
+    Subtitle: Attribute.String;
+    slug: Attribute.UID<'api::project.project', 'name'>;
+    description: Attribute.RichText;
+    Icon: Attribute.Media<'images'> & Attribute.Required;
+    Image: Attribute.Media<'images'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::project.project',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::project.project',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSocialLinkSocialLink extends Schema.CollectionType {
+  collectionName: 'social-link';
+  info: {
+    singularName: 'social-link';
+    pluralName: 'social-links';
+    displayName: 'social-link';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    Link: Attribute.Text;
+    Icon: Attribute.Media<'images'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::social-link.social-link',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::social-link.social-link',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -806,6 +985,11 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::company.company': ApiCompanyCompany;
+      'api::index.index': ApiIndexIndex;
+      'api::programming-language.programming-language': ApiProgrammingLanguageProgrammingLanguage;
+      'api::project.project': ApiProjectProject;
+      'api::social-link.social-link': ApiSocialLinkSocialLink;
     }
   }
 }

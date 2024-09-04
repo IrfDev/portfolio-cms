@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_about_porgramming_languages",
+  "info": {
+    "displayName": "Porgramming languages",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "programming_languages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::programming-language.programming-language"
+    }
+  }
+}

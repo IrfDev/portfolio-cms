@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_companies",
+  "info": {
+    "displayName": "Companies section"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+
+    "companies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::company.company"
+    }
+  }
+}

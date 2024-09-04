@@ -17,4 +17,7 @@ module.exports = ({ env }: any) => ({
       },
     },
   },
+  seo: {
+    enabled: true,
+  },
 });

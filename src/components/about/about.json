@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_about_abouts",
+  "info": {
+    "displayName": "About"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "About": {
+      "type": "text"
+    },
+    "Brow": {
+      "type": "string"
+    },
+    "dev_image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

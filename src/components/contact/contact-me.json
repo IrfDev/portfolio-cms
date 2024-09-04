@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_contact_me_footer",
+  "info": {
+    "displayName": "Contact me"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "brow": {
+      "type": "text"
+    },
+
+    "social_links": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::social-link.social-link"
+    }
+  }
+}

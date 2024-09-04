@@ -6,7 +6,8 @@
     "allowJs": true,
     "strict": true
   },
-  "include": ["./", "src/**/*.json"],
+  "files": ["./types/global.d.ts"],
+  "include": ["./", "src/**/*.json", "./types/**.d.ts"],
   "exclude": [
     "node_modules/",
     "build/",
