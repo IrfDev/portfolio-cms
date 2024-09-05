@@ -1,22 +1,22 @@
 {
   "collectionName": "components_projects",
   "info": {
-    "displayName": "Projects section"
+    "displayName": "Projects section",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string",
       "required": true
     },
-
-    "Subtitle": {
+    "subtitle": {
       "type": "string",
       "required": true
     },
-
     "projects": {
       "type": "relation",
+      "required": true,
       "relation": "oneToMany",
       "target": "api::project.project"
     }

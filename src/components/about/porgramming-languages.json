@@ -6,12 +6,14 @@
   },
   "options": {},
   "attributes": {
-    "Title": {
-      "type": "string"
+    "title": {
+      "type": "string",
+      "required": true
     },
     "programming_languages": {
       "type": "relation",
       "relation": "oneToMany",
+      "required": true,
       "target": "api::programming-language.programming-language"
     }
   }

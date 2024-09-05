@@ -4,25 +4,28 @@
   "info": {
     "singularName": "programming-language",
     "pluralName": "programming-languages",
-    "displayName": "Programming language"
+    "displayName": "Programming language",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Name": {
-      "type": "string"
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
     },
-    "Icon": {
-      "allowedTypes": [
-        "images"
-      ],
+    "icon": {
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
-    "Experience": {
+    "experience": {
       "type": "text"
     }
   }

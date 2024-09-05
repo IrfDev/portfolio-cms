@@ -1,14 +1,15 @@
 {
   "collectionName": "components_long-about",
   "info": {
-    "displayName": "Long About"
+    "displayName": "Long About",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Title": {
-      "type": "string"
+    "title": {
+      "type": "string",
+      "required": true
     },
-
     "content": {
       "type": "richtext",
       "required": true

@@ -4,37 +4,41 @@
   "info": {
     "singularName": "company",
     "pluralName": "companies",
-    "displayName": "company"
+    "displayName": "company",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string"
     },
     "brow": {
-      "type": "text"
+      "type": "string"
     },
     "slug": {
-      "type": "uid",
-      "targetField": "title"
+      "type": "uid"
     },
     "description": {
       "type": "richtext"
     },
-    "Logo": {
-      "allowedTypes": ["images"],
+    "logo": {
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "background_image": {
-      "allowedTypes": ["images"],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

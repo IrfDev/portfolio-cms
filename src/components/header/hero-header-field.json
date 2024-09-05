@@ -1,35 +1,31 @@
 {
   "collectionName": "components_header_hero_header_fields",
   "info": {
-    "displayName": "Hero Header field"
+    "displayName": "Hero Header field",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Title": {
-      "type": "string"
-    },
-    "Description": {
+    "title": { "required": true, "type": "string" },
+    "description": {
+      "required": true,
       "type": "text"
     },
-    "Cta_Button": {
+    "cta_button": {
+      "required": true,
       "type": "string"
     },
     "main_image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
-      "multiple": false
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
     },
     "secondary_image": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
       "type": "media",
-      "multiple": true
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
     }
   }
 }

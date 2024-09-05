@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_layout_layouts",
+  "info": {
+    "displayName": "Info site",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "site_title": {
+      "type": "string",
+      "required": true
+    },
+    "CV": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    }
+  }
+}

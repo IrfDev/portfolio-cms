@@ -1,15 +1,18 @@
 {
   "collectionName": "components_contact_me",
   "info": {
-    "displayName": "Contact me"
+    "displayName": "Contact me",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Title": {
-      "type": "string"
+    "title": {
+      "type": "string",
+      "required": true
     },
-    "Email_cta": {
-      "type": "text"
+    "email_cta": {
+      "type": "text",
+      "required": true
     }
   }
 }

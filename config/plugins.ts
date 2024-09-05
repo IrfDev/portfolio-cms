@@ -17,6 +17,13 @@ module.exports = ({ env }: any) => ({
       },
     },
   },
+
+  "schemas-to-ts": {
+    enabled: true,
+    config: {
+      destinationFolder: "common-ts",
+    },
+  },
   seo: {
     enabled: true,
   },

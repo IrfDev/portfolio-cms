@@ -1,25 +1,28 @@
 {
   "collectionName": "components_about_abouts",
   "info": {
-    "displayName": "About"
+    "displayName": "About",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Title": {
-      "type": "string"
+    "title": {
+      "type": "string",
+      "required": true
     },
-    "About": {
-      "type": "text"
+    "about": {
+      "type": "text",
+      "required": true
     },
-    "Brow": {
-      "type": "string"
+    "brow": {
+      "type": "string",
+      "required": true
     },
     "dev_image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
-      "multiple": false
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
     }
   }
 }

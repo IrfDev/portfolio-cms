@@ -4,62 +4,64 @@
   "info": {
     "singularName": "index",
     "pluralName": "indices",
-    "displayName": "Index"
+    "displayName": "portfolio_index",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Header": {
-      "type": "dynamiczone",
-      "components": [
-        "header.hero-header-field"
-      ]
-    },
-    "About": {
+    "about_section": {
       "type": "dynamiczone",
       "components": [
         "about.porgramming-languages",
         "about.contact-me",
         "about.about"
       ],
-      "required": true
-    },
-    "long_about": {
-      "type": "dynamiczone",
-      "components": [
-        "long-about.long-about"
-      ],
-      "required": true
-    },
-    "projects_section": {
-      "type": "dynamiczone",
-      "components": [
-        "projects.projects"
-      ],
-      "required": true
-    },
-    "Companies": {
-      "type": "dynamiczone",
-      "components": [
-        "companies.companies"
-      ],
-      "required": true
-    },
-    "get_in_touch": {
-      "type": "dynamiczone",
-      "components": [
-        "contact.contact-me"
-      ],
-      "required": true
+      "required": true,
+      "min": 3,
+      "max": 3
     },
     "SEO": {
       "type": "dynamiczone",
-      "components": [
-        "shared.seo",
-        "shared.meta-social"
-      ]
+      "components": ["shared.seo", "shared.meta-social"]
+    },
+    "long_about_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "long-about.long-about",
+      "required": true
+    },
+    "projects_section": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "projects.projects"
+    },
+    "header_section": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "header.hero-header-field"
+    },
+    "companies_section": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "companies.companies"
+    },
+    "contact_me_section": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "contact.contact-me"
+    },
+    "layout_site": {
+      "type": "relation",
+      "required": true,
+      "relation": "oneToOne",
+      "target": "api::layout-site.layout-site"
     }
   }
 }

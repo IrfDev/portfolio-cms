@@ -1,19 +1,22 @@
 {
-  "collectionName": "components_contact_me_footer",
+  "collectionName": "components_get_in_touch",
   "info": {
-    "displayName": "Contact me"
+    "displayName": "Get in touch ",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Title": {
-      "type": "string"
+    "title": {
+      "type": "text",
+      "required": true
     },
     "brow": {
-      "type": "text"
+      "type": "string",
+      "required": true
     },
-
     "social_links": {
       "type": "relation",
+      "required": true,
       "relation": "oneToMany",
       "target": "api::social-link.social-link"
     }
