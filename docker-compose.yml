@@ -25,8 +25,8 @@ services:
       API_TOKEN_SALT: ${API_TOKEN_SALT}
       NODE_ENV: ${NODE_ENV}
     volumes:
-      - ./config:/opt/app/config
-      - ./src:/opt/app/src
+      - ./config:/www/app/config
+      - ./src:/www/app/src
       - ./node_modules:/var/www/app/node_modules
     ports:
       - "1337:1337"
