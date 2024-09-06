@@ -1,7 +1,6 @@
 version: "3"
 services:
   strapi:
-    image: node:18.18.2
     build:
       context: .
       dockerfile: ./dockerfiles/prod/strapi.dockerfile
