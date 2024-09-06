@@ -41,8 +41,6 @@ services:
       - .:/var/www/app
     working_dir: /var/www/app
     entrypoint: npm
-    networks:
-      - biocinema_internal_network
 
 networks:
   strapi:
