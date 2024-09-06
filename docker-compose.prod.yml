@@ -6,7 +6,6 @@ services:
       context: .
       dockerfile: ./dockerfiles/prod/strapi.dockerfile
     restart: always
-    env_file: .env
     working_dir: /var/www/app/
     environment:
       - DATABASE_CLIENT=${DATABASE_CLIENT}
