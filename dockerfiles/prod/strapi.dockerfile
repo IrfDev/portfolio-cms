@@ -4,7 +4,7 @@ FROM node:18.18.2
 # Set the working directory inside the container
 WORKDIR /var/www/app
 
-COPY package.json package-lock.json ./
+COPY . .
 
 RUN npm run build
 
