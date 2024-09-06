@@ -1,0 +1,46 @@
+version: "3"
+services:
+  strapi:
+    image: node:18.18.2
+    build:
+      context: .
+      dockerfile: ./dockerfiles/strapi/prod.dockerfile
+    restart: always
+    env_file: .env
+    working_dir: /var/www/app/
+    environment:
+      DATABASE_CLIENT: ${DATABASE_CLIENT}
+      DATABASE_HOST: ${DATABASE_HOST}
+      DATABASE_PORT: ${DATABASE_PORT}
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      DATABASE_FILENAME: ${DATABASE_FILENAME}
+      CLOUDINARY_NAME: ${CLOUDINARY_NAME}
+      CLOUDINARY_KEY: ${CLOUDINARY_KEY}
+      CLOUDINARY_SECRET: ${CLOUDINARY_SECRET}
+      JWT_SECRET: ${JWT_SECRET}
+      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+      APP_KEYS: ${APP_KEYS}
+      API_TOKEN_SALT: ${API_TOKEN_SALT}
+      NODE_ENV: production
+    volumes:
+      - ./config:/www/app/config
+      - ./src:/www/app/src
+      - ./node_modules:/var/www/app/node_modules
+    ports:
+      - "1337:1337"
+    networks:
+      - strapi
+
+  npm_client:
+    image: node:18.18.2
+    volumes:
+      - .:/var/www/app
+    working_dir: /var/www/app
+    entrypoint: npm
+
+networks:
+  strapi:
+    name: Strapi
+    driver: bridge
