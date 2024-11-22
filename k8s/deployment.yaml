@@ -1,6 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  namespace: portfolio
   name: strapi-cms
   labels:
     app: strapi-cms
