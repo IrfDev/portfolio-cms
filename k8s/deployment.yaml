@@ -1,0 +1,105 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: strapi-cms
+  labels:
+    app: strapi-cms
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: strapi-cms
+  template:
+    metadata:
+      labels:
+        app: strapi-cms
+    spec:
+      containers:
+        - name: strapi
+          image: my-strapi-cms:latest
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 1337
+          env:
+            - name: DATABASE_CLIENT
+              valueFrom:
+                secretKeyRef:
+                  name: strapi-secrets
+                  key: DATABASE_CLIENT
+            - name: DATABASE_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: strapi-secrets
+                  key: DATABASE_HOST
+            - name: DATABASE_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: strapi-secrets
+                  key: DATABASE_PORT
+            - name: DATABASE_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: strapi-secrets
+                  key: DATABASE_NAME
+            - name: DATABASE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: strapi-secrets
+                  key: DATABASE_USERNAME
+            - name: DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: strapi-secrets
+                  key: DATABASE_PASSWORD
+            - name: DATABASE_FILENAME
+              valueFrom:
+                secretKeyRef:
+                  name: strapi-secrets
+                  key: DATABASE_FILENAME
+            - name: CLOUDINARY_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: strapi-secrets
+                  key: CLOUDINARY_NAME
+            - name: CLOUDINARY_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: strapi-secrets
+                  key: CLOUDINARY_KEY
+            - name: CLOUDINARY_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: strapi-secrets
+                  key: CLOUDINARY_SECRET
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: strapi-secrets
+                  key: JWT_SECRET
+            - name: ADMIN_JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: strapi-secrets
+                  key: ADMIN_JWT_SECRET
+            - name: APP_KEYS
+              valueFrom:
+                secretKeyRef:
+                  name: strapi-secrets
+                  key: APP_KEYS
+            - name: API_TOKEN_SALT
+              valueFrom:
+                secretKeyRef:
+                  name: strapi-secrets
+                  key: API_TOKEN_SALT
+            - name: NODE_ENV
+              value: production
+          volumeMounts:
+            - name: strapi-data
+              mountPath: /data/db
+      volumes:
+        - name: strapi-data
+          persistentVolumeClaim:
+            claimName: sqlite-pvc
