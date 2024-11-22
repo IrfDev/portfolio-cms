@@ -10,7 +10,7 @@
   "scripts": {
     "build": "strapi build",
     "deploy": "strapi deploy",
-    "develop": "strapi develop",
+    "develop": "strapi develop --debug",
     "develop-admin": "strapi develop --watch-admin",
     "start": "strapi start",
     "strapi": "strapi"
@@ -29,16 +29,16 @@
     "strapi-plugin-schemas-to-ts": "^1.3.2",
     "styled-components": "5.3.3"
   },
+  "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
+    "svg-url-loader": "^8.0.0",
+    "url-loader": "^4.1.1"
+  },
   "engines": {
     "node": ">=18.0.0 <=20.x.x",
     "npm": ">=6.0.0"
   },
   "strapi": {
     "uuid": "f6c6df65-92d1-4f40-a7e8-633c3214d2c4"
-  },
-  "devDependencies": {
-    "@svgr/webpack": "^8.1.0",
-    "svg-url-loader": "^8.0.0",
-    "url-loader": "^4.1.1"
   }
 }

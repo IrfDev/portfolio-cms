@@ -1,5 +1,3 @@
-const path = require("path");
-
 module.exports = ({ env }: any) => {
   const client = env("DATABASE_CLIENT", "sqlite");
 
@@ -81,13 +79,7 @@ module.exports = ({ env }: any) => {
     },
     sqlite: {
       connection: {
-        filename: path.join(
-          __dirname,
-          "..",
-          "..",
-          "..",
-          env("DATABASE_FILENAME", ".tmp/data.db")
-        ),
+        filename: env("DATABASE_FILENAME", "data/data.db"),
       },
       useNullAsDefault: true,
     },

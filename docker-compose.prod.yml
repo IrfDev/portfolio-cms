@@ -6,6 +6,7 @@ services:
       dockerfile: ./dockerfiles/prod/strapi.dockerfile
     restart: always
     working_dir: /var/www/app/
+    env_file: .env
     environment:
       - DATABASE_CLIENT=${DATABASE_CLIENT}
       - DATABASE_HOST=${DATABASE_HOST}
@@ -23,20 +24,11 @@ services:
       - API_TOKEN_SALT=${API_TOKEN_SALT}
       - NODE_ENV=production
     volumes:
-      - ./config:/www/app/config
-      - ./src:/www/app/src
-      - ./node_modules:/var/www/app/node_modules
+      - ./storage:/data/db
     ports:
       - "1337:1337"
     networks:
       - strapi
-
-  npm_client:
-    image: node:18.18.2
-    volumes:
-      - .:/var/www/app
-    working_dir: /var/www/app
-    entrypoint: npm
 
 networks:
   strapi:
