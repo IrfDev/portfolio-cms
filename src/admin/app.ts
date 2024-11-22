@@ -1,5 +1,4 @@
 import logoImage from "../extensions/admin/logo.svg";
-
 export default {
   config: {
     auth: {
@@ -13,5 +12,5 @@ export default {
       logo: logoImage,
     },
   },
-  bootstrap() {},
+  bootstrap() { },
 };
