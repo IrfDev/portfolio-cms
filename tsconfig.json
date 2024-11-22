@@ -1,6 +1,7 @@
 {
   "extends": "@strapi/typescript-utils/tsconfigs/server",
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
     "outDir": "dist",
     "rootDir": ".",
     "allowJs": true,
