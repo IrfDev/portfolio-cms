@@ -6,8 +6,8 @@ metadata:
 spec:
   selector:
     app: strapi-cms
-  ports:
-    - protocol: TCP
-      port: 1337
-      targetPort: 1337
   type: NodePort
+  ports:
+    - port: 1337
+      targetPort: 1337
+      nodePort: 30070
