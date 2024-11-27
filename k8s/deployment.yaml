@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: strapi
-          image: my-strapi-cms:latest
+          image: 10.42.0.27:5000/portfolio-cms:latest
           resources:
             limits:
               memory: "128Mi"
@@ -97,9 +97,16 @@ spec:
                   key: API_TOKEN_SALT
             - name: NODE_ENV
               value: production
+            - name: REGISTRY_ORIGIN
+              valueFrom:
+                secretKeyRef:
+                  name: strapi-secrets
+                  key: REGISTRY_ORIGIN
           volumeMounts:
             - name: strapi-data
               mountPath: /data/db
+      imagePullSecrets:
+      - name: registry-certs
       volumes:
         - name: strapi-data
           persistentVolumeClaim:
