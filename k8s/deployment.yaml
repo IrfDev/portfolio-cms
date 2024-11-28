@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: strapi
-          image: 10.42.0.27:5000/portfolio-cms:latest
+          image: 10.43.72.111:5000/cms-strapi:latest
           resources:
             limits:
               memory: "128Mi"
@@ -30,31 +30,6 @@ spec:
                 secretKeyRef:
                   name: strapi-secrets
                   key: DATABASE_CLIENT
-            - name: DATABASE_HOST
-              valueFrom:
-                secretKeyRef:
-                  name: strapi-secrets
-                  key: DATABASE_HOST
-            - name: DATABASE_PORT
-              valueFrom:
-                secretKeyRef:
-                  name: strapi-secrets
-                  key: DATABASE_PORT
-            - name: DATABASE_NAME
-              valueFrom:
-                secretKeyRef:
-                  name: strapi-secrets
-                  key: DATABASE_NAME
-            - name: DATABASE_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: strapi-secrets
-                  key: DATABASE_USERNAME
-            - name: DATABASE_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: strapi-secrets
-                  key: DATABASE_PASSWORD
             - name: DATABASE_FILENAME
               valueFrom:
                 secretKeyRef:
@@ -97,16 +72,9 @@ spec:
                   key: API_TOKEN_SALT
             - name: NODE_ENV
               value: production
-            - name: REGISTRY_ORIGIN
-              valueFrom:
-                secretKeyRef:
-                  name: strapi-secrets
-                  key: REGISTRY_ORIGIN
           volumeMounts:
             - name: strapi-data
               mountPath: /data/db
-      imagePullSecrets:
-      - name: registry-certs
       volumes:
         - name: strapi-data
           persistentVolumeClaim:
