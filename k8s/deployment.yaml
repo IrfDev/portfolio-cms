@@ -20,8 +20,8 @@ spec:
           image: 10.43.72.111:5000/cms-strapi:latest
           resources:
             limits:
-              memory: "128Mi"
-              cpu: "500m"
+              memory: "3Gi"
+              cpu: "820m"
           ports:
             - containerPort: 1337
           env:

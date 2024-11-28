@@ -1,5 +1,5 @@
 # Use a Python base image
-FROM node:18.18.2
+FROM node:18-alpine
 
 WORKDIR /var/www
 
