@@ -79,7 +79,7 @@ module.exports = ({ env }: any) => {
     },
     sqlite: {
       connection: {
-        filename: env("DATABASE_FILENAME", "data/data.db"),
+        filename: env("DATABASE_FILENAME", "/data/db/data.db"),
       },
       useNullAsDefault: true,
     },
